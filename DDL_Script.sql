@@ -1,33 +1,6 @@
 CREATE SCHEMA court_management;
 SET search_path TO court_management;
 
-DROP TABLE IF EXISTS E_filing;
-DROP TABLE IF EXISTS Case_document;
-DROP TABLE IF EXISTS Evidence;
-DROP TABLE IF EXISTS Has_witness;
-DROP TABLE IF EXISTS Hearing;
-DROP TABLE IF EXISTS Witness_email;
-DROP TABLE IF EXISTS Witness_phone_number;
-DROP TABLE IF EXISTS Witness;
-DROP TABLE IF EXISTS FIR;
-DROP TABLE IF EXISTS Payment;
-DROP TABLE IF EXISTS Interlocutory_applications;
-DROP TABLE IF EXISTS Case_history;
-DROP TABLE IF EXISTS Case_lawyers;
-DROP TABLE IF EXISTS Case_litigants;
-DROP TABLE IF EXISTS Case_judges;
-DROP TABLE IF EXISTS "Case";
-DROP TABLE IF EXISTS Cause_list;
-DROP TABLE IF EXISTS Litigant;
-DROP TABLE IF EXISTS Admin;
-DROP TABLE IF EXISTS Lawyer_specialisation;
-DROP TABLE IF EXISTS Lawyer;
-DROP TABLE IF EXISTS Judge_specialisation;
-DROP TABLE IF EXISTS Judge;
-DROP TABLE IF EXISTS User_phone_number;
-DROP TABLE IF EXISTS User_email;
-DROP TABLE IF EXISTS "User";
-
 CREATE TABLE "User" (
     User_ID       INT           NOT NULL,
     Name          VARCHAR(100)  NOT NULL,
@@ -296,3 +269,4 @@ CREATE TABLE E_filing (
     CONSTRAINT FK_E_filing_Admin FOREIGN KEY (Admin_ID) REFERENCES Admin(Admin_ID) ON DELETE RESTRICT ON UPDATE CASCADE,
     CONSTRAINT FK_E_filing_Pet_Lawyer FOREIGN KEY (Petitioner_lawyer_ID) REFERENCES Lawyer(Bar_council_number) ON DELETE SET NULL ON UPDATE CASCADE
 );
+
